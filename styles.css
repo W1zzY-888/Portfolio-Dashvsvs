@@ -52,9 +52,9 @@ a {
   top: 0;
   left: 0;
   z-index: 20;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   padding: 18px clamp(18px, 5vw, 64px);
   color: var(--berry);
@@ -91,6 +91,7 @@ a {
   display: flex;
   align-items: center;
   gap: clamp(18px, 3vw, 34px);
+  justify-self: center;
   font-size: 14px;
   font-weight: 700;
 }
@@ -140,17 +141,18 @@ a {
 
 .hero {
   position: relative;
+  display: grid;
+  place-items: center;
   min-height: 100vh;
   overflow: hidden;
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 204, 214, 0.92), transparent 26%),
-    radial-gradient(circle at 82% 24%, rgba(255, 204, 176, 0.88), transparent 24%),
-    radial-gradient(circle at 72% 82%, rgba(248, 216, 223, 0.9), transparent 22%),
+    radial-gradient(circle at 26% 18%, rgba(255, 204, 214, 0.72), transparent 26%),
+    radial-gradient(circle at 82% 26%, rgba(255, 204, 176, 0.64), transparent 24%),
+    radial-gradient(circle at 68% 84%, rgba(248, 216, 223, 0.68), transparent 24%),
     linear-gradient(135deg, #fff9f7 0%, #ffe8df 44%, #ffd4c2 100%);
 }
 
-.hero-grid,
-.hero-orb {
+.hero-grid {
   position: absolute;
   pointer-events: none;
 }
@@ -164,45 +166,18 @@ a {
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.88), transparent 88%);
 }
 
-.hero-orb {
-  border-radius: 50%;
-  filter: blur(8px);
-}
-
-.hero-orb-one {
-  top: 130px;
-  right: min(14vw, 180px);
-  width: clamp(120px, 18vw, 220px);
-  height: clamp(120px, 18vw, 220px);
-  background: rgba(255, 255, 255, 0.45);
-}
-
-.hero-orb-two {
-  right: 8%;
-  bottom: 16%;
-  width: clamp(80px, 12vw, 140px);
-  height: clamp(80px, 12vw, 140px);
-  background: rgba(240, 139, 162, 0.18);
-}
-
-.hero-orb-three {
-  bottom: 22%;
-  left: 8%;
-  width: clamp(140px, 19vw, 240px);
-  height: clamp(140px, 19vw, 240px);
-  background: rgba(255, 255, 255, 0.3);
-}
-
 .hero-content {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  width: min(820px, calc(100% - 36px));
+  width: min(960px, calc(100% - 36px));
   min-height: 100vh;
-  padding: 120px 0 96px;
-  margin-left: clamp(18px, 8vw, 108px);
+  padding: 130px 0 100px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .eyebrow {
@@ -230,10 +205,10 @@ h3 {
 }
 
 h1 {
-  max-width: 760px;
-  margin-bottom: 20px;
-  font-size: clamp(64px, 10vw, 126px);
-  line-height: 0.88;
+  max-width: 980px;
+  margin-bottom: 18px;
+  font-size: clamp(76px, 10.8vw, 138px);
+  line-height: 0.86;
 }
 
 h2 {
@@ -249,51 +224,31 @@ h3 {
 }
 
 .hero-lead {
-  max-width: 610px;
-  margin-bottom: 34px;
+  max-width: 700px;
+  margin-bottom: 36px;
   color: rgba(57, 41, 51, 0.82);
   font-size: clamp(17px, 2vw, 21px);
   line-height: 1.7;
 }
 
-.hero-actions,
-.hero-meta {
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-actions {
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.hero-meta {
-  gap: 10px;
-}
-
-.hero-meta span {
-  display: inline-flex;
-  min-height: 38px;
-  align-items: center;
-  padding: 0 14px;
-  color: var(--berry);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(181, 95, 123, 0.14);
-  border-radius: 999px;
-  backdrop-filter: blur(10px);
+  gap: 14px;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px;
-  padding: 0 24px;
+  min-height: 58px;
+  padding: 0 34px;
   font-weight: 800;
+  font-size: 15px;
   border: 1px solid transparent;
   border-radius: 999px;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
@@ -554,6 +509,11 @@ h3 {
 }
 
 @media (max-width: 900px) {
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .nav-toggle {
     position: relative;
     z-index: 22;
@@ -582,7 +542,8 @@ h3 {
 
   .hero-content {
     min-height: 94vh;
-    margin-right: 18px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .intro,
@@ -617,7 +578,6 @@ h3 {
   .hero-content {
     width: calc(100% - 32px);
     padding-bottom: 68px;
-    margin-left: 16px;
   }
 
   h1 {
