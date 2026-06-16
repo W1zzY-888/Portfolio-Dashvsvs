@@ -36,6 +36,10 @@ body.nav-open {
   touch-action: none;
 }
 
+body.lightbox-open {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -402,8 +406,9 @@ h3 {
 
 .works-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-  gap: 20px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
 }
 
 .work-card {
@@ -413,45 +418,142 @@ h3 {
   border-radius: 8px;
   box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
+  cursor: zoom-in;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
-.work-card.large {
-  grid-row: span 2;
+.work-card:hover,
+.work-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 52px rgba(181, 95, 123, 0.14);
+  border-color: rgba(181, 95, 123, 0.22);
+  outline: none;
 }
 
-.work-visual {
-  min-height: 270px;
-  background-size: cover;
-  background-position: center;
+.work-card-feature {
+  grid-column: 1 / span 7;
 }
 
-.work-card.large .work-visual {
-  min-height: 620px;
+.work-media-frame,
+.collage-tile {
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  border-radius: 6px;
+  background: linear-gradient(145deg, rgba(255, 219, 210, 0.9), rgba(255, 245, 240, 0.88));
 }
 
-.visual-one {
+.work-media-frame img,
+.collage-tile img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.work-collage {
+  display: grid;
+  gap: 8px;
+  padding: 8px;
   background:
-    radial-gradient(circle at 26% 22%, rgba(255, 255, 255, 0.62), transparent 18%),
-    linear-gradient(160deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%),
-    linear-gradient(135deg, #ffc6cf 0%, #ffd8c2 48%, #ffece5 100%);
+    linear-gradient(180deg, rgba(255, 247, 243, 0.92), rgba(255, 252, 250, 0.78)),
+    radial-gradient(circle at top left, rgba(255, 198, 207, 0.2), transparent 28%);
 }
 
-.visual-two {
-  background:
-    radial-gradient(circle at 28% 24%, rgba(240, 139, 162, 0.44), transparent 24%),
-    radial-gradient(circle at 74% 68%, rgba(255, 255, 255, 0.52), transparent 20%),
-    linear-gradient(145deg, #ffdede 0%, #ffe7d3 52%, #fff8f4 100%);
+.work-collage-dark {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
 }
 
-.visual-three {
+.work-collage-orange {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-top: 8px;
   background:
-    linear-gradient(135deg, rgba(181, 95, 123, 0.12), transparent 48%),
-    repeating-linear-gradient(90deg, #fff7f2 0 32px, #ffe4d9 32px 34px),
-    linear-gradient(180deg, #ffaf99, #f28fa3);
+    linear-gradient(180deg, rgba(255, 247, 243, 0.92), rgba(255, 252, 250, 0.78)),
+    radial-gradient(circle at top right, rgba(255, 178, 144, 0.18), transparent 30%);
+}
+
+.work-card-content {
+  grid-column: 4 / span 6;
+  justify-self: center;
+  width: 100%;
+}
+
+.work-card-brand {
+  grid-column: 8 / span 5;
+}
+
+.portrait-tile {
+  aspect-ratio: 0.78 / 1;
+}
+
+.square-tile {
+  aspect-ratio: 1 / 0.72;
+}
+
+.wide-media {
+  aspect-ratio: 2.45 / 0.82;
+  padding: 8px 8px 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.wide-media img {
+  border-radius: 6px;
+}
+
+.work-card-feature .portrait-tile:first-child img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.work-card-feature .portrait-tile:nth-child(2) img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.work-card-feature .portrait-tile:nth-child(3) img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.work-card-feature .collage-tile {
+  background: #181315;
+}
+
+.work-card-content .square-tile:first-child img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.work-card-content .square-tile:nth-child(2) img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.work-card-content .square-tile:nth-child(3) img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.work-card-content .square-tile {
+  background: #f26a19;
+}
+
+.work-card-brand .wide-media img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.work-card-brand .wide-media {
+  background: #9ccc46;
 }
 
 .work-info {
-  padding: 26px;
+  min-height: 58px;
+  padding: 10px 16px 12px;
+  display: flex;
+  align-items: center;
 }
 
 .work-info span,
@@ -463,6 +565,229 @@ h3 {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.works-section .work-info span,
+.works-section .work-info p {
+  display: none;
+}
+
+.works-section .work-info h3 {
+  margin: 0;
+  font-size: clamp(16px, 1.3vw, 24px);
+  line-height: 1.08;
+}
+
+.works-section .section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+.works-section .section-heading h2 {
+  max-width: 520px;
+  font-size: clamp(32px, 3.5vw, 56px);
+  line-height: 0.94;
+  text-align: right;
+  text-wrap: balance;
+}
+
+.works-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.work-lightbox[hidden] {
+  display: none;
+}
+
+.work-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+.work-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(29, 20, 24, 0.6);
+  backdrop-filter: blur(16px);
+}
+
+.work-lightbox__dialog {
+  position: relative;
+  width: min(1100px, calc(100vw - 56px));
+  max-height: 88vh;
+  overflow: auto;
+  padding: 28px;
+  border: 1px solid rgba(181, 95, 123, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 250, 247, 0.96);
+  box-shadow: 0 40px 100px rgba(57, 41, 51, 0.24);
+}
+
+.work-lightbox__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(181, 95, 123, 0.08);
+  cursor: pointer;
+}
+
+.work-lightbox__close span {
+  position: absolute;
+  top: 21px;
+  left: 12px;
+  width: 20px;
+  height: 1.5px;
+  background: var(--berry);
+}
+
+.work-lightbox__close span:first-child {
+  transform: rotate(45deg);
+}
+
+.work-lightbox__close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.work-lightbox__eyebrow {
+  margin: 0 0 8px;
+  color: var(--berry);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.work-lightbox__title {
+  margin-bottom: 18px;
+  font-size: clamp(30px, 3.2vw, 48px);
+}
+
+.work-lightbox__content .work-collage,
+.work-lightbox__content .work-media-frame {
+  padding: 12px;
+  border-radius: 14px;
+}
+
+.work-lightbox__content .work-collage-dark,
+.work-lightbox__content .work-collage-orange {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.work-lightbox__content .portrait-tile {
+  aspect-ratio: 0.74 / 1;
+}
+
+.work-lightbox__content .square-tile {
+  aspect-ratio: 1 / 1;
+}
+
+.work-lightbox[hidden] {
+  display: none;
+}
+
+.work-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+.work-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 17, 22, 0.58);
+  backdrop-filter: blur(18px);
+}
+
+.work-lightbox__dialog {
+  position: relative;
+  width: min(1100px, calc(100vw - 56px));
+  max-height: min(88vh, 920px);
+  overflow: auto;
+  padding: 28px;
+  border: 1px solid rgba(181, 95, 123, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 250, 247, 0.96);
+  box-shadow: 0 40px 100px rgba(70, 38, 50, 0.24);
+}
+
+.work-lightbox__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(181, 95, 123, 0.08);
+  cursor: pointer;
+}
+
+.work-lightbox__close span {
+  position: absolute;
+  top: 21px;
+  left: 12px;
+  width: 20px;
+  height: 1.5px;
+  background: var(--berry);
+}
+
+.work-lightbox__close span:first-child {
+  transform: rotate(45deg);
+}
+
+.work-lightbox__close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.work-lightbox__eyebrow {
+  margin-bottom: 8px;
+  color: var(--berry);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.work-lightbox__title {
+  margin-bottom: 18px;
+  font-size: clamp(30px, 3.2vw, 48px);
+}
+
+.work-lightbox__content .work-collage,
+.work-lightbox__content .work-media-frame {
+  padding: 12px;
+  border-radius: 14px;
+}
+
+.work-lightbox__content .work-collage-dark {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.work-lightbox__content .work-collage-orange {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.work-lightbox__content .portrait-tile {
+  aspect-ratio: 0.74 / 1;
+}
+
+.work-lightbox__content .square-tile {
+  aspect-ratio: 1 / 1;
 }
 
 .about-section {
@@ -679,8 +1004,43 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .work-card.large .work-visual {
-    min-height: 430px;
+  .work-card-feature {
+    grid-column: 1;
+  }
+
+  .work-card-brand,
+  .work-card-content {
+    grid-column: 1;
+  }
+
+  .work-collage-dark {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .work-collage-orange {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .work-card-content {
+    width: 100%;
+  }
+
+  .works-section .section-heading {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .works-section .section-heading h2 {
+    max-width: none;
+    text-align: left;
+  }
+
+  .work-lightbox {
+    padding: 18px;
+  }
+
+  .work-lightbox__dialog {
+    width: min(980px, calc(100vw - 36px));
   }
 
   .about-media {
@@ -744,9 +1104,47 @@ h3 {
     margin-left: 16px;
   }
 
-  .work-visual,
-  .work-card.large .work-visual {
-    min-height: 310px;
+  .work-collage-dark,
+  .work-collage-orange {
+    grid-template-columns: 1fr;
+  }
+
+  .works-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .works-section .section-heading h2 {
+    font-size: clamp(34px, 12vw, 52px);
+  }
+
+  .works-section .work-info h3 {
+    font-size: 24px;
+  }
+
+  .work-lightbox__dialog {
+    width: calc(100vw - 24px);
+    max-height: 86vh;
+    padding: 22px 16px 16px;
+  }
+
+  .work-lightbox__content .work-collage-dark,
+  .work-lightbox__content .work-collage-orange {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-tile,
+  .square-tile,
+  .wide-media {
+    aspect-ratio: auto;
+    min-height: 260px;
+  }
+
+  .work-lightbox__content .portrait-tile,
+  .work-lightbox__content .square-tile,
+  .work-lightbox__content .wide-media {
+    aspect-ratio: auto;
+    min-height: 240px;
   }
 
   .about-media {
