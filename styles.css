@@ -33,6 +33,7 @@ body {
 
 body.nav-open {
   overflow: hidden;
+  touch-action: none;
 }
 
 a {
@@ -542,7 +543,7 @@ h3 {
 
   .nav-toggle {
     position: relative;
-    z-index: 22;
+    z-index: 102;
     display: block;
   }
 
@@ -554,11 +555,17 @@ h3 {
 
   .site-nav {
     position: fixed;
-    inset: 0;
-    z-index: 21;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 28px;
+    padding: 88px 24px 64px;
     color: var(--berry);
     font-size: 28px;
     background:
@@ -571,6 +578,13 @@ h3 {
   .site-nav.is-open,
   body.nav-open .site-nav {
     transform: translateX(0);
+  }
+
+  .site-nav a {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 0;
+    text-align: center;
   }
 
   .hero-content {
