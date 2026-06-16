@@ -1062,6 +1062,24 @@ h3 {
   margin: 0;
 }
 
+.site-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.site-credit__link {
+  color: var(--berry);
+  font-weight: 800;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.site-credit__link:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
 @media (max-width: 900px) {
   .site-header {
     display: flex;

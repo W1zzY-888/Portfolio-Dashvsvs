@@ -122,7 +122,7 @@ const translations = {
     },
     footer: {
       left: "Дарья Городничая portfolio",
-      right: "Made by W1ZZYDEV"
+      right: "Made by"
     }
   },
   en: {
@@ -238,7 +238,7 @@ const translations = {
     },
     footer: {
       left: "Darya Gorodnichaya portfolio",
-      right: "Made by W1ZZYDEV"
+      right: "Made by"
     }
   },
   zh: {
@@ -354,7 +354,7 @@ const translations = {
     },
     footer: {
       left: "达莉娅·戈罗德尼恰娅 portfolio",
-      right: "Made by W1ZZYDEV"
+      right: "Made by"
     }
   }
 };
