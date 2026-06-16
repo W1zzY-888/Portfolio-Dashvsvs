@@ -22,14 +22,18 @@ const updateHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 24);
 };
 
-const scrollToTopOnFreshOpen = () => {
+const forceTop = () => {
   if (window.location.hash) {
     history.replaceState(null, "", window.location.pathname + window.location.search);
   }
 
-  requestAnimationFrame(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    updateHeader();
+  window.scrollTo(0, 0);
+  updateHeader();
+};
+
+const resetStartPosition = () => {
+  [0, 40, 120, 320, 800, 1400].forEach((delay) => {
+    window.setTimeout(forceTop, delay);
   });
 };
 
@@ -41,12 +45,9 @@ nav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeNav);
 });
 
-window.addEventListener("load", scrollToTopOnFreshOpen);
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    scrollToTopOnFreshOpen();
-  }
-});
+window.addEventListener("DOMContentLoaded", resetStartPosition);
+window.addEventListener("load", resetStartPosition);
+window.addEventListener("pageshow", resetStartPosition);
 window.addEventListener("scroll", updateHeader, { passive: true });
 
-updateHeader();
+resetStartPosition();
