@@ -1,14 +1,13 @@
 const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
-const langSwitcher = document.querySelector("[data-lang-toggle]")?.closest(".language-switcher");
-const langToggle = document.querySelector("[data-lang-toggle]");
-const langMenu = document.querySelector("[data-lang-menu]");
-const langCurrent = document.querySelector("[data-lang-current]");
 const langOptions = document.querySelectorAll("[data-lang-option]");
 
 const translations = {
   ru: {
+    language: {
+      label: "Язык"
+    },
     meta: {
       title: "Дарья Городничая | Графический дизайнер",
       description: "Портфолио Дарьи Городничей: графический дизайн, визуальная айдентика, композиция и оформление брендов."
@@ -85,26 +84,28 @@ const translations = {
       }
     },
     reviews: {
-      eyebrow: "Client notes",
-      title: "Отзывы, которые звучат как продолжение визуального стиля.",
-      intro: "Небольшая подборка теплых впечатлений от клиентов, чтобы сайт чувствовался живым, а не просто красивым.",
+      eyebrow: "Real feedback",
+      title: "Реальные отзывы о работе Даши живут в ее Instagram и Telegram.",
+      intro: "Вместо выдуманных цитат здесь собраны аккуратные переходы туда, где Даше действительно пишут клиенты, отмечают проекты и оставляют обратную связь.",
       featured: {
-        tag: "Brand identity",
-        quote: "«Дарья очень тонко чувствует настроение бренда. После работы с ней визуал стал цельным, узнаваемым и действительно “моим”.»",
-        author: "Анна, personal brand project",
-        meta: "Айдентика и визуальное направление"
+        tag: "Real responses",
+        quote: "Настоящие отзывы, реакции и впечатления клиентов лучше читать там, где они появляются вживую.",
+        author: "@dashvsvs",
+        meta: "Instagram stories, direct и Telegram-диалоги"
       },
       second: {
-        tag: "Social media",
-        quote: "«Макеты для соцсетей получились аккуратными и очень современными. Все выглядит легко, но при этом профессионально и уверенно.»",
-        author: "Мария, beauty studio",
-        meta: "Контент и визуальная подача"
+        tag: "Instagram",
+        quote: "Посмотреть живые отметки, сторис, публикации и визуальные отклики на проекты Дарьи.",
+        author: "@dashvsvs",
+        meta: "Профиль с актуальными публикациями",
+        link: "Открыть Instagram"
       },
       third: {
-        tag: "Creative support",
-        quote: "«Было очень спокойно работать вместе: Дарья внимательно слушает, предлагает уместные решения и доводит идею до красивого результата.»",
-        author: "Екатерина, boutique project",
-        meta: "Концепция и графический стиль"
+        tag: "Telegram",
+        quote: "Написать Даше напрямую, запросить кейсы, уточнить детали проекта или попросить показать свежую обратную связь.",
+        author: "@dashvsvs",
+        meta: "Личный контакт для общения",
+        link: "Открыть Telegram"
       }
     },
     contact: {
@@ -120,6 +121,9 @@ const translations = {
     }
   },
   en: {
+    language: {
+      label: "Language"
+    },
     meta: {
       title: "Darya Gorodnichaya | Graphic Designer",
       description: "Portfolio of Darya Gorodnichaya: graphic design, visual identity, composition, and brand styling."
@@ -196,26 +200,28 @@ const translations = {
       }
     },
     reviews: {
-      eyebrow: "Client notes",
-      title: "Reviews that feel like an extension of the visual language.",
-      intro: "A small selection of warm impressions from clients, helping the website feel alive instead of simply polished.",
+      eyebrow: "Real feedback",
+      title: "Real feedback about Darya's work lives in her Instagram and Telegram.",
+      intro: "Instead of invented quotes, this section sends visitors to the places where clients actually message Darya, tag projects, and leave responses.",
       featured: {
-        tag: "Brand identity",
-        quote: "\"Darya has a subtle sense of brand mood. After working with her, the visual style became cohesive, recognizable, and truly mine.\"",
-        author: "Anna, personal brand project",
-        meta: "Identity and visual direction"
+        tag: "Real responses",
+        quote: "The best way to read real reactions, messages, and impressions is directly where they appear.",
+        author: "@dashvsvs",
+        meta: "Instagram stories, direct messages, and Telegram chats"
       },
       second: {
-        tag: "Social media",
-        quote: "\"The social media layouts turned out elegant and modern. Everything feels light, but still professional and confident.\"",
-        author: "Maria, beauty studio",
-        meta: "Content and visual presentation"
+        tag: "Instagram",
+        quote: "See live tags, stories, posts, and visual feedback around Darya's projects.",
+        author: "@dashvsvs",
+        meta: "Profile with current publications",
+        link: "Open Instagram"
       },
       third: {
-        tag: "Creative support",
-        quote: "\"It felt calm and easy to work together: Darya listens carefully, suggests the right ideas, and brings them to a beautiful result.\"",
-        author: "Ekaterina, boutique project",
-        meta: "Concept and graphic style"
+        tag: "Telegram",
+        quote: "Write to Darya directly, ask for project details, request case studies, or ask to see recent feedback.",
+        author: "@dashvsvs",
+        meta: "Direct contact for communication",
+        link: "Open Telegram"
       }
     },
     contact: {
@@ -231,6 +237,9 @@ const translations = {
     }
   },
   zh: {
+    language: {
+      label: "语言"
+    },
     meta: {
       title: "达莉娅·戈罗德尼恰娅 | 平面设计师",
       description: "达莉娅·戈罗德尼恰娅作品集：平面设计、视觉识别、品牌构图与审美呈现。"
@@ -307,26 +316,28 @@ const translations = {
       }
     },
     reviews: {
-      eyebrow: "Client notes",
-      title: "这些评价像是网站视觉语言的延伸。",
-      intro: "几段温柔而真实的客户反馈，让页面不只是好看，也更有温度。",
+      eyebrow: "Real feedback",
+      title: "关于达莉娅工作的真实反馈，都在她的 Instagram 和 Telegram 里。",
+      intro: "这里不再放虚构评价，而是直接引导访客去看客户真正留言、标记作品和给出反馈的地方。",
       featured: {
-        tag: "Brand identity",
-        quote: "“达莉娅对品牌气质的感受非常细腻。合作之后，整个视觉系统变得统一、清晰，而且真正属于我。”",
-        author: "Anna，个人品牌项目",
-        meta: "品牌识别与视觉方向"
+        tag: "Real responses",
+        quote: "最真实的评价、反馈和交流，最好直接去它们真正发生的地方阅读。",
+        author: "@dashvsvs",
+        meta: "Instagram 限时、私信与 Telegram 对话"
       },
       second: {
-        tag: "Social media",
-        quote: "“社交媒体版式很精致，也很现代。整体感觉轻盈，但依旧专业而有力量。”",
-        author: "Maria，美业工作室",
-        meta: "内容设计与视觉呈现"
+        tag: "Instagram",
+        quote: "查看真实的标记、限时动态、发布内容，以及围绕达莉娅项目产生的视觉反馈。",
+        author: "@dashvsvs",
+        meta: "持续更新的个人主页",
+        link: "打开 Instagram"
       },
       third: {
-        tag: "Creative support",
-        quote: "“一起合作的过程很安心：达莉娅会认真倾听，提出合适的想法，并把它们落实成真正漂亮的结果。”",
-        author: "Ekaterina，精品项目",
-        meta: "概念与图形风格"
+        tag: "Telegram",
+        quote: "直接给达莉娅发消息，询问项目、案例，或者请她展示最新的真实反馈。",
+        author: "@dashvsvs",
+        meta: "直接沟通入口",
+        link: "打开 Telegram"
       }
     },
     contact: {
@@ -383,7 +394,6 @@ const resetStartPosition = () => {
 
 const setDocumentLanguage = (language) => {
   document.documentElement.lang = language;
-  langCurrent.textContent = language === "zh" ? "中文" : language.toUpperCase();
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const value = getTranslation(language, element.dataset.i18n);
@@ -439,14 +449,6 @@ const persistLanguage = (language) => {
   setDocumentLanguage(language);
 };
 
-const toggleLanguageMenu = () => {
-  langSwitcher?.classList.toggle("is-open");
-};
-
-const closeLanguageMenu = () => {
-  langSwitcher?.classList.remove("is-open");
-};
-
 let currentLanguage = window.localStorage.getItem("dashvsvs-language") || "ru";
 
 navToggle.addEventListener("click", () => {
@@ -457,21 +459,10 @@ nav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeNav);
 });
 
-langToggle?.addEventListener("click", () => {
-  toggleLanguageMenu();
-});
-
 langOptions.forEach((option) => {
   option.addEventListener("click", () => {
     persistLanguage(option.dataset.lang);
-    closeLanguageMenu();
   });
-});
-
-document.addEventListener("click", (event) => {
-  if (langSwitcher && !langSwitcher.contains(event.target)) {
-    closeLanguageMenu();
-  }
 });
 
 window.addEventListener("DOMContentLoaded", resetStartPosition);

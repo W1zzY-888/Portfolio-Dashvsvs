@@ -42,11 +42,8 @@
       </nav>
 
       <div class="language-switcher" aria-label="Переключение языка">
-        <button class="language-switcher__toggle" type="button" data-lang-toggle aria-label="Change language">
-          <span class="language-switcher__spark" aria-hidden="true"></span>
-          <span class="language-switcher__label" data-lang-current>RU</span>
-        </button>
-        <div class="language-switcher__menu" data-lang-menu>
+        <span class="language-switcher__hint" data-i18n="language.label">Язык</span>
+        <div class="language-switcher__list">
           <button type="button" class="language-option is-active" data-lang-option data-lang="ru">RU</button>
           <button type="button" class="language-option" data-lang-option data-lang="en">EN</button>
           <button type="button" class="language-option" data-lang-option data-lang="zh">中文</button>
@@ -187,46 +184,47 @@
       <section class="section reviews-section" id="reviews">
         <div class="section-heading reviews-heading">
           <div>
-            <p class="eyebrow" data-i18n="reviews.eyebrow">Client notes</p>
-            <h2 data-i18n="reviews.title">Отзывы, которые звучат как продолжение визуального стиля.</h2>
+            <p class="eyebrow" data-i18n="reviews.eyebrow">Real feedback</p>
+            <h2 data-i18n="reviews.title">Реальные отзывы о работе Даши живут в ее Instagram и Telegram.</h2>
           </div>
           <p class="reviews-intro" data-i18n="reviews.intro">
-            Небольшая подборка теплых впечатлений от клиентов, чтобы сайт чувствовался живым, а не просто красивым.
+            Вместо выдуманных цитат здесь собраны аккуратные переходы туда, где Даше действительно пишут клиенты, отмечают проекты и оставляют обратную связь.
           </p>
         </div>
         <div class="reviews-grid">
           <article class="review-card featured-review">
             <div class="review-card__top">
-              <span class="review-chip" data-i18n="reviews.featured.tag">Brand identity</span>
-              <span class="review-stars" aria-hidden="true">★★★★★</span>
+              <span class="review-chip" data-i18n="reviews.featured.tag">Real responses</span>
             </div>
             <p class="review-quote" data-i18n="reviews.featured.quote">
-              «Дарья очень тонко чувствует настроение бренда. После работы с ней визуал стал цельным, узнаваемым и действительно “моим”.»
+              Настоящие отзывы, реакции и впечатления клиентов лучше читать там, где они появляются вживую.
             </p>
             <div class="review-author">
-              <strong data-i18n="reviews.featured.author">Анна, personal brand project</strong>
-              <span data-i18n="reviews.featured.meta">Айдентика и визуальное направление</span>
+              <strong data-i18n="reviews.featured.author">@dashvsvs</strong>
+              <span data-i18n="reviews.featured.meta">Instagram stories, direct и Telegram-диалоги</span>
             </div>
           </article>
-          <article class="review-card">
-            <span class="review-chip" data-i18n="reviews.second.tag">Social media</span>
-            <p class="review-quote" data-i18n="reviews.second.quote">
-              «Макеты для соцсетей получились аккуратными и очень современными. Все выглядит легко, но при этом профессионально и уверенно.»
+          <article class="review-card review-card--action">
+            <span class="review-chip" data-i18n="reviews.second.tag">Instagram</span>
+            <p class="review-note" data-i18n="reviews.second.quote">
+              Посмотреть живые отметки, сторис, публикации и визуальные отклики на проекты Дарьи.
             </p>
             <div class="review-author">
-              <strong data-i18n="reviews.second.author">Мария, beauty studio</strong>
-              <span data-i18n="reviews.second.meta">Контент и визуальная подача</span>
+              <strong data-i18n="reviews.second.author">@dashvsvs</strong>
+              <span data-i18n="reviews.second.meta">Профиль с актуальными публикациями</span>
             </div>
+            <a class="button review-button" href="https://www.instagram.com/dashvsvs?igsh=eWtpbnZld3Y5d3d0" target="_blank" rel="noopener" data-i18n="reviews.second.link">Открыть Instagram</a>
           </article>
-          <article class="review-card">
-            <span class="review-chip" data-i18n="reviews.third.tag">Creative support</span>
-            <p class="review-quote" data-i18n="reviews.third.quote">
-              «Было очень спокойно работать вместе: Дарья внимательно слушает, предлагает уместные решения и доводит идею до красивого результата.»
+          <article class="review-card review-card--action">
+            <span class="review-chip" data-i18n="reviews.third.tag">Telegram</span>
+            <p class="review-note" data-i18n="reviews.third.quote">
+              Написать Даше напрямую, запросить кейсы, уточнить детали проекта или попросить показать свежую обратную связь.
             </p>
             <div class="review-author">
-              <strong data-i18n="reviews.third.author">Екатерина, boutique project</strong>
-              <span data-i18n="reviews.third.meta">Концепция и графический стиль</span>
+              <strong data-i18n="reviews.third.author">@dashvsvs</strong>
+              <span data-i18n="reviews.third.meta">Личный контакт для общения</span>
             </div>
+            <a class="button review-button" href="https://t.me/dashvsvs" target="_blank" rel="noopener" data-i18n="reviews.third.link">Открыть Telegram</a>
           </article>
         </div>
       </section>

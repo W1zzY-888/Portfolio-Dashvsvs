@@ -98,100 +98,56 @@ a {
 }
 
 .language-switcher {
-  position: relative;
-  justify-self: end;
-  margin-left: clamp(16px, 2vw, 28px);
-}
-
-.language-switcher__toggle {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 0 14px 0 12px;
-  color: var(--berry);
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.54);
-  border: 1px solid rgba(181, 95, 123, 0.16);
+  gap: 12px;
+  justify-self: end;
+  margin-left: clamp(16px, 2vw, 28px);
+  padding: 8px 10px 8px 14px;
+  background: rgba(255, 252, 250, 0.62);
+  border: 1px solid rgba(181, 95, 123, 0.12);
   border-radius: 999px;
   box-shadow: 0 14px 26px rgba(181, 95, 123, 0.08);
   backdrop-filter: blur(16px);
 }
 
-.language-switcher__spark {
-  position: relative;
-  width: 22px;
-  height: 22px;
-  background: linear-gradient(135deg, var(--rose), var(--peach));
-  border-radius: 50%;
-  box-shadow: 0 8px 18px rgba(240, 139, 162, 0.24);
-}
-
-.language-switcher__spark::before,
-.language-switcher__spark::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: inherit;
-  border-radius: inherit;
-}
-
-.language-switcher__spark::before {
-  transform: rotate(58deg) scale(0.78);
-}
-
-.language-switcher__spark::after {
-  transform: rotate(-58deg) scale(0.78);
-}
-
-.language-switcher__label {
-  min-width: 34px;
-  font-size: 13px;
+.language-switcher__hint {
+  color: var(--muted);
+  font-size: 11px;
   font-weight: 800;
-  text-align: center;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
-.language-switcher__menu {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  display: grid;
-  gap: 8px;
-  min-width: 110px;
-  padding: 12px;
-  background: rgba(255, 252, 250, 0.94);
-  border: 1px solid rgba(181, 95, 123, 0.12);
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(181, 95, 123, 0.14);
-  backdrop-filter: blur(16px);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-6px);
-  transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.language-switcher.is-open .language-switcher__menu {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
+.language-switcher__list {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .language-option {
-  padding: 10px 12px;
+  min-width: 46px;
+  min-height: 36px;
+  padding: 0 12px;
   color: var(--muted);
+  font-size: 12px;
   font-weight: 800;
   cursor: pointer;
-  background: transparent;
-  border: 0;
-  border-radius: 12px;
-  transition: background 180ms ease, color 180ms ease;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(181, 95, 123, 0.08);
+  border-radius: 999px;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .language-option.is-active,
 .language-option:hover {
-  color: var(--berry);
-  background: rgba(240, 139, 162, 0.1);
+  color: var(--cream);
+  background: linear-gradient(135deg, var(--rose), var(--peach));
+  box-shadow: 0 12px 24px rgba(240, 139, 162, 0.2);
+}
+
+.language-option:hover {
+  transform: translateY(-1px);
 }
 
 .site-nav a {
@@ -661,6 +617,10 @@ h3 {
     linear-gradient(135deg, rgba(246, 163, 181, 0.18), rgba(255, 179, 138, 0.24));
 }
 
+.review-card--action {
+  gap: 18px;
+}
+
 .review-card__top {
   display: flex;
   align-items: center;
@@ -681,17 +641,18 @@ h3 {
   border-radius: 999px;
 }
 
-.review-stars {
-  color: #f4a85d;
-  font-size: 14px;
-  letter-spacing: 0.18em;
-}
-
 .review-quote {
   margin: 22px 0 24px;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(28px, 2.8vw, 40px);
   line-height: 1.02;
+}
+
+.review-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.85;
 }
 
 .review-author {
@@ -707,6 +668,13 @@ h3 {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.6;
+}
+
+.review-button {
+  align-self: flex-start;
+  color: var(--berry);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: none;
 }
 
 .contact-section {
@@ -834,10 +802,10 @@ h3 {
   }
 
   .language-switcher {
-    position: relative;
     z-index: 102;
     margin-left: auto;
     margin-right: 12px;
+    padding: 6px 8px 6px 10px;
   }
 
   .hero-content {
@@ -921,13 +889,14 @@ h3 {
     padding-left: 10px;
   }
 
-  .language-switcher__spark {
-    width: 18px;
-    height: 18px;
+  .language-switcher__hint {
+    display: none;
   }
 
-  .language-switcher__label {
-    min-width: 28px;
+  .language-option {
+    min-width: 42px;
+    min-height: 34px;
+    padding: 0 10px;
     font-size: 11px;
   }
 
