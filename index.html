@@ -3,253 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Портфолио Дарьи Городничей: графический дизайн, визуальная айдентика, композиция и оформление брендов."
-      data-i18n-content="meta.description"
-    />
-    <title data-i18n-document-title="meta.title">Дарья Городничая | Графический дизайнер</title>
-    <script>
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-
-      if (!window.location.hash) {
-        window.scrollTo(0, 0);
-      }
-    </script>
+    <meta name="theme-color" content="#f7a987" />
+    <meta name="description" content="Портфолио Дарьи Городничей — графический дизайн, айдентика и контент." data-i18n-content="meta.description" />
+    <title>Дарья Городничая — графический дизайнер</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Unbounded:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="noise" aria-hidden="true"></div>
     <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Дарья Городничая" data-i18n-aria-label="brand.ariaLabel">
-        <span class="brand-mark">D</span>
-        <span data-i18n="brand.name">Дарья Городничая</span>
+      <a class="logo" href="#top" aria-label="На главную" data-i18n-aria-label="nav.home">
+        <span>D</span><span class="logo-dot">●</span><span>G</span>
       </a>
-
       <nav class="site-nav" data-nav>
-        <a href="#works" data-i18n="nav.works">Работы</a>
-        <a href="#services" data-i18n="nav.services">Форматы</a>
-        <a href="#reviews" data-i18n="nav.reviews">Отзывы</a>
-        <a href="#contact" data-i18n="nav.contact">Контакты</a>
+        <a href="#works"><span>01</span><span data-i18n="nav.works">Работы</span></a>
+        <a href="#about"><span>02</span><span data-i18n="nav.about">Обо мне</span></a>
+        <a href="#services"><span>03</span><span data-i18n="nav.services">Форматы</span></a>
+        <a href="#contact"><span>04</span><span data-i18n="nav.contact">Контакты</span></a>
       </nav>
-
-      <div class="language-switcher" aria-label="Переключение языка">
-        <span class="language-switcher__hint" data-i18n="language.label">Язык</span>
-        <div class="language-switcher__list">
-          <button type="button" class="language-option is-active" data-lang-option data-lang="ru">RU</button>
-          <button type="button" class="language-option" data-lang-option data-lang="en">EN</button>
-          <button type="button" class="language-option" data-lang-option data-lang="zh">中文</button>
+      <div class="header-tools">
+        <div class="language-switcher" aria-label="Переключение языка" data-i18n-aria-label="language.aria">
+          <button class="language-current" type="button" data-language-toggle aria-expanded="false">RU <span>↓</span></button>
+          <div class="language-list" data-language-list>
+            <button class="is-active" type="button" data-lang-option data-lang="ru">RU</button>
+            <button type="button" data-lang-option data-lang="en">EN</button>
+            <button type="button" data-lang-option data-lang="zh">中文</button>
+          </div>
         </div>
+        <a class="header-contact" href="https://t.me/dashvsvs" target="_blank" rel="noopener" data-i18n="nav.write">Написать ↗</a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Открыть меню" data-i18n-aria-label="nav.open"><span></span><span></span></button>
       </div>
-
-      <button class="nav-toggle" type="button" aria-label="Открыть меню" data-nav-toggle data-i18n-aria-label="nav.openMenu">
-        <span></span>
-        <span></span>
-      </button>
     </header>
 
     <main id="top">
-      <section class="hero" aria-label="Первый экран портфолио" data-i18n-aria-label="hero.ariaLabel">
-        <div class="hero-grid"></div>
-        <div class="hero-layout">
-          <div class="hero-content">
-            <p class="eyebrow" data-i18n="hero.eyebrow">Graphic design portfolio</p>
-            <h1 data-i18n="hero.title">Дарья Городничая</h1>
-            <p class="hero-lead" data-i18n="hero.lead">
-              Я Дарья Городничая, графический дизайнер. Создаю визуальные решения
-              для брендов, социальных сетей и проектов, где важны стиль, аккуратная
-              композиция и запоминающееся настроение.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#works" data-i18n="hero.primaryCta">Смотреть работы</a>
-              <a class="button ghost" href="#contact" data-i18n="hero.secondaryCta">Связаться</a>
-            </div>
+      <section class="hero">
+        <div class="hero-orbit orbit-one" aria-hidden="true" data-i18n="hero.orbit">идеи • айдентика • истории •</div>
+        <div class="hero-blob hero-blob-one" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob-two" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="kicker reveal" data-i18n="hero.kicker">Графический дизайнер / Владивосток</p>
+          <h1 class="reveal"><span data-i18n="hero.name">Дарья</span><br /><span class="hero-surname" data-i18n="hero.surname">Городничая</span></h1>
+          <p class="hero-lead reveal" data-i18n="hero.lead">Собираю визуальные миры для брендов, социальных сетей и идей, которым тесно в обычных рамках.</p>
+          <a class="round-link reveal" href="#works"><span data-i18n="hero.cta">Смотреть<br />портфолио</span><b>↘</b></a>
+        </div>
+        <div class="portrait-stage reveal">
+          <div class="portrait-label" data-i18n="hero.label">DASHVSVS<br />ПОРТФОЛИО ’26</div>
+          <div class="portrait-frame"><img src="assets/darya-portrait.jpg" alt="Дарья Городничая" data-i18n-alt="hero.alt" /></div>
+          <div class="portrait-flower" aria-hidden="true">✽</div>
+          <p class="portrait-note" data-i18n="hero.note">Дизайн с характером,<br />вниманием и щепоткой странности.</p>
+        </div>
+        <div class="scroll-note"><span data-i18n="hero.scroll">листай вниз</span><i></i></div>
+      </section>
+
+      <div class="ticker" aria-hidden="true"><div data-i18n="ticker.text">АЙДЕНТИКА ✦ СОЦИАЛЬНЫЕ СЕТИ ✦ КРЕАТИВНЫЙ ДИЗАЙН ✦ АЙДЕНТИКА ✦ СОЦИАЛЬНЫЕ СЕТИ ✦ КРЕАТИВНЫЙ ДИЗАЙН ✦</div></div>
+
+      <section class="works section" id="works">
+        <div class="section-title reveal">
+          <span>01 / <span data-i18n="works.label">избранное</span></span>
+          <h2 data-i18n="works.title">Работы, которые<br />говорят сами</h2>
+          <p data-i18n="works.intro">Три разных настроения. Один подход: найти точный образ и убрать всё лишнее.</p>
+        </div>
+
+        <div class="project project-wide reveal" data-work-card tabindex="0" role="button" aria-haspopup="dialog">
+          <div class="project-number">01</div>
+          <div class="project-visual project-dark">
+            <img src="assets/work-nissan-front.png" alt="Дизайн сторис Nissan" data-i18n-alt="alts.nissanFront" />
+            <img src="assets/work-nissan-rear.png" alt="Дизайн карточки Nissan" data-i18n-alt="alts.nissanRear" />
+            <img src="assets/work-nissan-interior.png" alt="Дизайн сторис об интерьере Nissan" data-i18n-alt="alts.nissanInterior" />
           </div>
-          <div class="hero-portrait" aria-label="Портрет Дарьи" data-i18n-aria-label="hero.portraitAria">
-            <img src="assets/darya-portrait.jpg" alt="Дарья Городничая" data-i18n-alt="hero.portraitAlt" />
+          <div class="project-meta"><p data-i18n="works.oneTag">Stories / арт-дирекшн</p><h3 data-i18n="works.one">Stories<br />под ключ</h3><span data-i18n="works.open">Открыть кейс ↗</span></div>
+        </div>
+
+        <div class="projects-pair">
+          <div class="project project-tall reveal" data-work-card tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-number">02</div>
+            <div class="project-visual project-green"><img src="assets/work-green-power.png" alt="Айдентика Green Power" data-i18n-alt="alts.greenPower" /></div>
+            <div class="project-meta"><p data-i18n="works.twoTag">Айдентика / упаковка</p><h3 data-i18n="works.two">Айдентика<br />бренда</h3><span data-i18n="works.open">Открыть кейс ↗</span></div>
+          </div>
+          <div class="project project-offset reveal" data-work-card tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="project-number">03</div>
+            <div class="project-visual project-orange">
+              <img src="assets/work-orange-stamp.png" alt="Оранжевый дизайн поста" data-i18n-alt="alts.orangeStamp" />
+              <img src="assets/work-orange-magnifier.png" alt="Промо пост с лупой" data-i18n-alt="alts.orangeMagnifier" />
+              <img src="assets/work-orange-gradient.png" alt="Оранжевая промо карточка" data-i18n-alt="alts.orangeGradient" />
+            </div>
+            <div class="project-meta"><p data-i18n="works.threeTag">Контент / кампания</p><h3 data-i18n="works.three">Посты<br />под ключ</h3><span data-i18n="works.open">Открыть кейс ↗</span></div>
           </div>
         </div>
       </section>
 
-      <section class="section works-section" id="works">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="works.eyebrow">Selected works</p>
-          <h2 data-i18n="works.title">Избранные работы</h2>
+      <section class="about section" id="about">
+        <div class="about-stamp reveal"><span data-i18n="about.stamp">ДИЗАЙН<br />С ЖИВЫМ<br />ПУЛЬСОМ</span></div>
+        <div class="about-copy reveal">
+          <span class="section-index">02 / <span data-i18n="about.label">знакомство</span></span>
+          <h2 data-i18n="about.title">Красиво — это мало.<br />Нужно, чтобы <em>цепляло.</em></h2>
+          <div class="about-text">
+            <p data-i18n="about.p1">Я Дарья, графический дизайнер. Люблю выразительную типографику, неожиданные детали и композиции, в которых есть воздух.</p>
+            <p data-i18n="about.p2">Каждый проект начинаю не с украшения, а с настроения и смысла. Так дизайн получается не просто аккуратным — он становится своим.</p>
+          </div>
+          <a href="https://t.me/dashvsvs" target="_blank" rel="noopener" class="text-link" data-i18n="about.link">Познакомиться ближе ↗</a>
         </div>
-
-        <div class="works-grid">
-          <article class="work-card work-card-feature" data-work-card tabindex="0" role="button" aria-haspopup="dialog">
-            <div class="work-collage work-collage-dark" aria-label="Подборка автомобильных постеров">
-              <figure class="collage-tile portrait-tile">
-                <img src="assets/work-nissan-front.png" alt="Постер Nissan Note Medallist" loading="lazy" />
-              </figure>
-              <figure class="collage-tile portrait-tile">
-                <img src="assets/work-nissan-rear.png" alt="Карточка Nissan Note с характеристиками" loading="lazy" />
-              </figure>
-              <figure class="collage-tile portrait-tile">
-                <img src="assets/work-nissan-interior.png" alt="Постер с интерьером Nissan Note" loading="lazy" />
-              </figure>
-            </div>
-            <div class="work-info">
-              <span>Case study</span>
-              <h3>Кейс Stories под ключ</h3>
-              <p>Кейс Stories под ключ</p>
-            </div>
-          </article>
-
-          <article class="work-card work-card-brand" data-work-card tabindex="0" role="button" aria-haspopup="dialog">
-            <figure class="work-media-frame wide-media">
-              <img src="assets/work-green-power.png" alt="Упаковка Green Power" loading="lazy" />
-            </figure>
-            <div class="work-info">
-              <span>Identity</span>
-              <h3>Айдентика бренда под ключ</h3>
-              <p>Айдентика бренда под ключ</p>
-            </div>
-          </article>
-
-          <article class="work-card work-card-content" data-work-card tabindex="0" role="button" aria-haspopup="dialog">
-            <div class="work-collage work-collage-orange" aria-label="Подборка оранжевых промо-баннеров">
-              <figure class="collage-tile square-tile">
-                <img src="assets/work-orange-stamp.png" alt="Проверка и контроль с лупой" loading="lazy" />
-              </figure>
-              <figure class="collage-tile square-tile">
-                <img src="assets/work-orange-magnifier.png" alt="Промо Проверка и контроль" loading="lazy" />
-              </figure>
-              <figure class="collage-tile square-tile">
-                <img src="assets/work-orange-gradient.png" alt="Оранжевая карточка Проверка и контроль" loading="lazy" />
-              </figure>
-            </div>
-            <div class="work-info">
-              <span>Posts</span>
-              <h3>Посты под ключ</h3>
-              <p>Посты под ключ</p>
-            </div>
-          </article>
-        </div>
+        <div class="about-image reveal"><img src="assets/dashvsvs-hero.png" alt="Творческий портрет Дарьи" data-i18n-alt="alts.creativePortrait" /><span data-i18n="about.hello">привет!</span></div>
       </section>
 
-      <section class="section services-section" id="services">
-        <div class="section-heading">
-          <p class="eyebrow">Formats</p>
-          <h2>Мои продукты</h2>
+      <section class="services section" id="services">
+        <div class="section-title section-title-light reveal">
+          <span>03 / <span data-i18n="services.label">что я делаю</span></span>
+          <h2 data-i18n="services.title">Можно прийти<br />с идеей. Или без.</h2>
         </div>
         <div class="service-list">
-          <div class="service-item">
-            <span>01</span>
-            <h3 data-i18n="services.cardOne.title">Айдентика</h3>
-            <p data-i18n="services.cardOne.text">Логотипы, палитры, визуальные правила и аккуратная графическая система.</p>
-          </div>
-          <div class="service-item">
-            <span>02</span>
-            <h3 data-i18n="services.cardTwo.title">Дизайн и мудборды</h3>
-            <p data-i18n="services.cardTwo.text">Цветовые решения, визуальные концепции, оформление личного бренда.</p>
-          </div>
-          <div class="service-item">
-            <span>03</span>
-            <h3 data-i18n="services.cardThree.title">Контент</h3>
-            <p data-i18n="services.cardThree.text">Обложки, посты, истории, мини-серии для социальных сетей.</p>
+          <article class="service-row reveal"><span>01</span><h3 data-i18n="services.oneTitle">Айдентика</h3><p data-i18n="services.oneText">Логотип, палитра, визуальные правила и цельный образ бренда.</p><b>✦</b></article>
+          <article class="service-row reveal"><span>02</span><h3 data-i18n="services.twoTitle">Мудборды</h3><p data-i18n="services.twoText">Поиск стилистики, цвета и визуального направления проекта.</p><b>✺</b></article>
+          <article class="service-row reveal"><span>03</span><h3 data-i18n="services.threeTitle">Контент</h3><p data-i18n="services.threeText">Посты, обложки и серии stories для социальных сетей.</p><b>❋</b></article>
+        </div>
+      </section>
+
+      <section class="feedback section">
+        <span class="section-index reveal">04 / <span data-i18n="feedback.label">живой отклик</span></span>
+        <div class="feedback-grid">
+          <h2 class="reveal" data-i18n="feedback.title">Отзывы не<br />выдумываю.<br /><em>Показываю.</em></h2>
+          <p class="reveal" data-i18n="feedback.text">Свежие проекты, отметки и реакции клиентов живут там, где происходит настоящее общение — в Instagram и Telegram.</p>
+          <div class="social-cards reveal">
+            <a href="https://www.instagram.com/dashvsvs?igsh=eWtpbnZld3Y5d3d0" target="_blank" rel="noopener"><small data-i18n="feedback.diary">ВИЗУАЛЬНЫЙ ДНЕВНИК</small><strong>Instagram</strong><span>@dashvsvs ↗</span></a>
+            <a href="https://t.me/dashvsvs" target="_blank" rel="noopener"><small data-i18n="feedback.talk">ДАВАЙТЕ ОБСУДИМ</small><strong>Telegram</strong><span>@dashvsvs ↗</span></a>
           </div>
         </div>
       </section>
 
-      <section class="section reviews-section" id="reviews">
-        <div class="section-heading reviews-heading">
-          <div>
-            <p class="eyebrow" data-i18n="reviews.eyebrow">Real feedback</p>
-            <h2 data-i18n="reviews.title">Реальные отзывы о работе Даши живут в ее Instagram и Telegram.</h2>
-          </div>
-          <p class="reviews-intro" data-i18n="reviews.intro">
-            Вместо выдуманных цитат здесь собраны аккуратные переходы туда, где Даше действительно пишут клиенты, отмечают проекты и оставляют обратную связь.
-          </p>
-        </div>
-        <div class="reviews-grid">
-          <article class="review-card featured-review">
-            <div class="review-card__top">
-              <span class="review-chip" data-i18n="reviews.featured.tag">Real responses</span>
-            </div>
-            <p class="review-quote" data-i18n="reviews.featured.quote">
-              Настоящие отзывы, реакции и впечатления клиентов лучше читать там, где они появляются вживую.
-            </p>
-            <div class="review-author">
-              <strong data-i18n="reviews.featured.author">@dashvsvs</strong>
-              <span data-i18n="reviews.featured.meta">Instagram stories, direct и Telegram-диалоги</span>
-            </div>
-          </article>
-          <article class="review-card review-card--action">
-            <span class="review-chip" data-i18n="reviews.second.tag">Instagram</span>
-            <p class="review-note" data-i18n="reviews.second.quote">
-              Посмотреть живые отметки, сторис, публикации и визуальные отклики на проекты Дарьи.
-            </p>
-            <div class="review-author">
-              <strong data-i18n="reviews.second.author">@dashvsvs</strong>
-              <span data-i18n="reviews.second.meta">Профиль с актуальными публикациями</span>
-            </div>
-            <a class="button review-button" href="https://www.instagram.com/dashvsvs?igsh=eWtpbnZld3Y5d3d0" target="_blank" rel="noopener" data-i18n="reviews.second.link">Открыть Instagram</a>
-          </article>
-          <article class="review-card review-card--action">
-            <span class="review-chip" data-i18n="reviews.third.tag">Telegram</span>
-            <p class="review-note" data-i18n="reviews.third.quote">
-              Написать Даше напрямую, запросить кейсы, уточнить детали проекта или попросить показать свежую обратную связь.
-            </p>
-            <div class="review-author">
-              <strong data-i18n="reviews.third.author">@dashvsvs</strong>
-              <span data-i18n="reviews.third.meta">Личный контакт для общения</span>
-            </div>
-            <a class="button review-button" href="https://t.me/dashvsvs" target="_blank" rel="noopener" data-i18n="reviews.third.link">Открыть Telegram</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="contact-section" id="contact">
-        <div>
-          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
-          <h2 data-i18n="contact.title">Связаться с Дарьей</h2>
-          <p data-i18n="contact.text">Почта, Telegram и Instagram Дарьи для связи и обсуждения новых проектов.</p>
-        </div>
-        <div class="contact-actions" aria-label="Контакты Дарьи">
-          <a class="button primary" href="mailto:Dasha12myy@mail.ru">Dasha12myy@mail.ru</a>
-          <a class="button ghost" href="https://t.me/dashvsvs" target="_blank" rel="noopener" data-i18n="contact.telegram">Telegram</a>
-          <a class="button ghost" href="https://www.instagram.com/dashvsvs?igsh=eWtpbnZld3Y5d3d0" target="_blank" rel="noopener" data-i18n="contact.instagram">Instagram</a>
+      <section class="contact" id="contact">
+        <div class="contact-scribble" aria-hidden="true">✽</div>
+        <p data-i18n="contact.kicker">Есть идея? Давайте дадим ей форму.</p>
+        <h2 data-i18n="contact.title">Создадим что-то<br /><em>необычное?</em></h2>
+        <div class="contact-links">
+          <a href="mailto:Dasha12myy@mail.ru">Dasha12myy@mail.ru ↗</a>
+          <a href="https://t.me/dashvsvs" target="_blank" rel="noopener">Telegram ↗</a>
+          <a href="https://www.instagram.com/dashvsvs?igsh=eWtpbnZld3Y5d3d0" target="_blank" rel="noopener">Instagram ↗</a>
         </div>
       </section>
     </main>
 
+    <footer class="site-footer"><p>© 2026 DARYA GORODNICHAYA</p><p><span data-i18n="footer.made">Made with care by</span> <a href="https://w1zzy-888.github.io/W1ZZYDEV-company-site/" target="_blank" rel="noopener">W1ZZYDEV ↗</a></p></footer>
+
     <div class="work-lightbox" data-work-lightbox hidden>
-      <div class="work-lightbox__backdrop" data-work-lightbox-close></div>
-      <div class="work-lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="work-lightbox-title">
-        <button class="work-lightbox__close" type="button" aria-label="Закрыть просмотр" data-work-lightbox-close>
-          <span></span>
-          <span></span>
-        </button>
-        <p class="work-lightbox__eyebrow">Подробнее</p>
-        <h3 class="work-lightbox__title" id="work-lightbox-title"></h3>
-        <div class="work-lightbox__content" data-work-lightbox-content></div>
+      <div class="lightbox-backdrop" data-work-lightbox-close></div>
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+        <button class="lightbox-close" type="button" data-work-lightbox-close aria-label="Закрыть" data-i18n-aria-label="modal.close">×</button>
+        <p><span data-i18n="modal.selected">ИЗБРАННАЯ РАБОТА</span> / <span data-i18n="modal.preview">ПРОСМОТР</span></p>
+        <h3 id="lightbox-title"></h3>
+        <div class="lightbox-content" data-work-lightbox-content></div>
       </div>
     </div>
-
-    <footer class="site-footer">
-      <p data-i18n="footer.left">Дарья Городничая portfolio</p>
-      <p class="site-credit">
-        <span data-i18n="footer.right">Made by</span>
-        <a
-          class="site-credit__link"
-          href="https://w1zzy-888.github.io/W1ZZYDEV-company-site/#contact"
-          target="_blank"
-          rel="noopener"
-        >
-          W1ZZYDEV
-        </a>
-      </p>
-    </footer>
-
-    <script src="script.js?v=reviews-lang-mobile"></script>
+    <div class="image-viewer" data-image-viewer hidden>
+      <div class="image-viewer__backdrop" data-image-viewer-close></div>
+      <div class="image-viewer__bar">
+        <p><span data-i18n="viewer.title">ПОЛНЫЙ ПРОСМОТР</span> · <span data-image-counter></span></p>
+        <button type="button" data-image-viewer-close aria-label="Закрыть изображение" data-i18n-aria-label="viewer.close">×</button>
+      </div>
+      <button class="image-viewer__nav image-viewer__prev" type="button" data-image-prev aria-label="Предыдущее изображение" data-i18n-aria-label="viewer.prev">←</button>
+      <figure><img src="" alt="" data-image-viewer-image /><figcaption data-image-caption></figcaption></figure>
+      <button class="image-viewer__nav image-viewer__next" type="button" data-image-next aria-label="Следующее изображение" data-i18n-aria-label="viewer.next">→</button>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
